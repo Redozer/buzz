@@ -72,6 +72,25 @@ clear. Existing first-load seeding remains clear. These tests override channel
 data/read-state providers: they exercise the real projection and row, not a
 live relay, APK or physical Android device.
 
+## Executed validation
+
+Linux host, pinned Flutter 3.41.7 / Dart 3.11.5, `CI=true BOT=true`:
+
+| Check | Result |
+| --- | --- |
+| `just mobile-install` | Passed; no tracked dependency/lockfile changes. |
+| `just mobile-check` on final Dart files | 582 files formatted with no changes; analyzer reported no issues. |
+| Targeted row regressions | 3 passed: Android stream, thread read-marker clearing, Android dark-theme DM. |
+| Production renderer-removal mutation | All 3 targeted regressions failed on missing visible dots; original renderer restored before the full suite. |
+| `just mobile-test` | Gateway recipe probes passed; main suite: 2409 passed, 4 skipped, 0 failed; separate unconfigured-push suite: 3 passed. |
+| Mobile file-size gate / `git diff --check` | Passed. |
+
+No GitHub CI, packaged Android build or physical-device verification is claimed.
+The initial SDK startup's Azure environment probe was blocked by automatic
+approval review. SDK source confirms the normal CI/bot mode short-circuits
+that metadata probe; subsequent checks ran in that mode without requesting
+instance metadata.
+
 ## If unread is still absent on the device
 
 Check these boundaries in order, scoped to one member channel with a persisted
