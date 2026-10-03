@@ -79,6 +79,21 @@ class _ChannelTile extends ConsumerWidget {
                 ],
               ),
             ),
+            if (isUnread) ...[
+              const SizedBox(width: Grid.xxs),
+              Semantics(
+                label: 'Unread',
+                child: Container(
+                  key: ValueKey('channel-unread-dot-${channel.id}'),
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: context.colors.primary,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+            ],
             if (channel.isEphemeral) ...[
               const SizedBox(width: Grid.xxs),
               _EphemeralBadge(channel: channel),
