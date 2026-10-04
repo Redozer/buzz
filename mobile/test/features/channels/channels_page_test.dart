@@ -44,6 +44,7 @@ void main() {
     ValueChanged<double>? onSettingsTransitionProgress,
     ValueListenable<int>? tabReselection,
     _FakeProfileNotifier? profile,
+    bool darkTheme = false,
   }) {
     return ProviderScope(
       overrides: [
@@ -62,7 +63,9 @@ void main() {
         ...overrides,
       ],
       child: MaterialApp(
-        theme: AppTheme.light(topSectionGradient: topSectionGradient),
+        theme: darkTheme
+            ? AppTheme.dark()
+            : AppTheme.light(topSectionGradient: topSectionGradient),
         builder: (context, child) => MediaQuery(
           data: MediaQuery.of(context).copyWith(
             disableAnimations: disableAnimations,
@@ -2242,71 +2245,95 @@ void main() {
     expect(find.text('Retry'), findsOneWidget);
   });
 
-  testWidgets('bolds and clears unread channel labels', (tester) async {
-    final channels = [
-      Channel(
-        id: '1',
-        name: 'general',
-        channelType: 'stream',
-        visibility: 'open',
-        description: 'General discussion',
-        createdBy: 'abc',
-        createdAt: DateTime(2025),
-        memberCount: 10,
-        lastMessageAt: DateTime.fromMillisecondsSinceEpoch(
-          20 * 1000,
-          isUtc: true,
-        ),
-        isMember: true,
-      ),
-    ];
-    final readState = _FakeReadStateNotifier(
-      const ReadStateState(
-        isReady: true,
-        pubkey: 'pk',
-        contexts: {'1': 10},
-        version: 0,
-      ),
-    );
-
-    await tester.pumpWidget(
-      buildTestable(
-        overrides: [
-          channelsProvider.overrideWith(
-            () => _FakeNotifier(
-              channels,
-              observedEventsByChannel: {
-                '1': [_observed(id: 'msg-1', createdAt: 20)],
-              },
-            ),
+  testWidgets(
+    'Android paints an unread dot and clears it on read',
+    (tester) async {
+      final channels = [
+        Channel(
+          id: '1',
+          name: 'general',
+          channelType: 'stream',
+          visibility: 'open',
+          description: 'General discussion',
+          createdBy: 'abc',
+          createdAt: DateTime(2025),
+          memberCount: 10,
+          lastMessageAt: DateTime.fromMillisecondsSinceEpoch(
+            20 * 1000,
+            isUtc: true,
           ),
-          readStateProvider.overrideWith(() => readState),
-        ],
-      ),
-    );
-    await tester.pumpAndSettle();
+          isMember: true,
+        ),
+      ];
+      final readState = _FakeReadStateNotifier(
+        const ReadStateState(
+          isReady: true,
+          pubkey: 'pk',
+          contexts: {'1': 10},
+          version: 0,
+        ),
+      );
 
-    expect(
-      tester.widget<Text>(find.text('general')).style?.fontWeight,
-      FontWeight.w700,
-    );
-    expect(
-      tester.widget<Text>(find.text('general')).style?.color,
-      Theme.of(tester.element(find.text('general'))).colorScheme.onSurface,
-    );
+      await tester.pumpWidget(
+        buildTestable(
+          overrides: [
+            channelsProvider.overrideWith(
+              () => _FakeNotifier(
+                channels,
+                observedEventsByChannel: {
+                  '1': [_observed(id: 'msg-1', createdAt: 20)],
+                },
+              ),
+            ),
+            readStateProvider.overrideWith(() => readState),
+          ],
+        ),
+      );
+      await tester.pumpAndSettle();
 
-    readState.markContextRead('1', 20);
-    await tester.pump();
+      expect(
+        tester.widget<Text>(find.text('general')).style?.fontWeight,
+        FontWeight.w700,
+      );
+      expect(
+        tester.widget<Text>(find.text('general')).style?.color,
+        Theme.of(tester.element(find.text('general'))).colorScheme.onSurface,
+      );
+      final dot = find.byKey(const ValueKey('channel-unread-dot-1'));
+      expect(dot.hitTestable(), findsOneWidget);
+      expect(tester.getSize(dot), const Size(8, 8));
+      final decoration =
+          tester.widget<Container>(dot).decoration! as BoxDecoration;
+      expect(decoration.shape, BoxShape.circle);
+      expect(
+        decoration.color,
+        Theme.of(tester.element(dot)).colorScheme.primary,
+      );
+      expect(
+        tester.getSemantics(find.widgetWithText(InkWell, 'general')),
+        matchesSemantics(
+          label: 'general\nUnread',
+          isFocusable: true,
+          hasFocusAction: true,
+          hasTapAction: true,
+          hasLongPressAction: true,
+        ),
+      );
 
-    expect(
-      tester.widget<Text>(find.text('general')).style?.fontWeight,
-      FontWeight.w400,
-    );
-  });
+      readState.markContextRead('1', 20);
+      await tester.pump();
 
-  testWidgets('bolds channels with unread thread activity without a badge', (
-    tester,
-  ) async {
+      expect(
+        tester.widget<Text>(find.text('general')).style?.fontWeight,
+        FontWeight.w400,
+      );
+      expect(dot, findsNothing);
+    },
+    variant: TargetPlatformVariant({TargetPlatform.android}),
+    semanticsEnabled: true,
+  );
+
+  testWidgets('shows and clears unread thread dots', (tester) async {
     final channels = [
       Channel(
         id: '1',
@@ -2367,7 +2394,71 @@ void main() {
       tester.widget<Text>(find.text('general')).style?.fontWeight,
       FontWeight.w700,
     );
+    final dot = find.byKey(const ValueKey('channel-unread-dot-1'));
+    expect(dot.hitTestable(), findsOneWidget);
+
+    readState.markContextRead('thread:root', 30);
+    await tester.pump();
+    expect(dot, findsNothing);
   });
+
+  testWidgets(
+    'Android paints DM unread dots in dark theme',
+    (tester) async {
+      final readState = _FakeReadStateNotifier(
+        const ReadStateState(
+          isReady: true,
+          pubkey: 'pk',
+          contexts: {'1': 20, '3': 10},
+          version: 0,
+        ),
+      );
+
+      await tester.pumpWidget(
+        buildTestable(
+          darkTheme: true,
+          overrides: [
+            channelsProvider.overrideWith(
+              () => _FakeNotifier(
+                testChannels,
+                observedEventsByChannel: {
+                  '1': [_observed(id: 'read-stream', createdAt: 20)],
+                  '3': [
+                    makeObservedUnreadEvent(
+                      id: 'unread-dm',
+                      createdAt: 20,
+                      rootId: null,
+                      highPriority: true,
+                      channelType: 'dm',
+                      isThreadedReply: false,
+                    ),
+                  ],
+                },
+              ),
+            ),
+            readStateProvider.overrideWith(() => readState),
+          ],
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const ValueKey('channel-unread-dot-1')), findsNothing);
+      final dot = find.byKey(const ValueKey('channel-unread-dot-3'));
+      expect(dot.hitTestable(), findsOneWidget);
+      final decoration =
+          tester.widget<Container>(dot).decoration! as BoxDecoration;
+      expect(
+        decoration.color,
+        Theme.of(tester.element(dot)).colorScheme.primary,
+      );
+      expect(tester.getSize(dot), const Size(8, 8));
+
+      readState.markContextRead('3', 20);
+      await tester.pump();
+      expect(dot, findsNothing);
+    },
+    variant: TargetPlatformVariant({TargetPlatform.android}),
+  );
 
   testWidgets('seeds first loaded channels as read', (tester) async {
     final channels = [
@@ -2408,6 +2499,7 @@ void main() {
 
     expect(readState.seededContexts, {'1': 20});
     expect(readState.markedContexts, isEmpty);
+    expect(find.byKey(const ValueKey('channel-unread-dot-1')), findsNothing);
     expect(
       tester.widget<Text>(find.text('general')).style?.fontWeight,
       FontWeight.w400,
