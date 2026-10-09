@@ -11,24 +11,24 @@
  * deliberate deviation noted on `formatDayGroupLabel`.
  */
 
-const WEEKDAY_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const WEEKDAY_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   weekday: "long",
 });
 
-const WEEKDAY_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const WEEKDAY_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   weekday: "long",
   month: "long",
   day: "numeric",
 });
 
-const MONTH_DAY_YEAR_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const MONTH_DAY_YEAR_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   month: "long",
   day: "numeric",
   year: "numeric",
 });
 
 const SHORT_WEEKDAY_SHORT_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat(
-  "en-US",
+  "ru-RU",
   {
     weekday: "short",
     month: "short",
@@ -36,13 +36,13 @@ const SHORT_WEEKDAY_SHORT_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat(
   },
 );
 
-const SHORT_MONTH_DAY_YEAR_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const SHORT_MONTH_DAY_YEAR_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   month: "short",
   day: "numeric",
   year: "numeric",
 });
 
-const TIME_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const TIME_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   hour: "numeric",
   minute: "2-digit",
 });

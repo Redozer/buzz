@@ -1,9 +1,9 @@
 import type { Channel } from "@/shared/api/types";
 
-const relativeTimeFormatter = new Intl.RelativeTimeFormat("en-US", {
+const relativeTimeFormatter = new Intl.RelativeTimeFormat("ru-RU", {
   numeric: "auto",
 });
-const absoluteTimeFormatter = new Intl.DateTimeFormat("en-US", {
+const absoluteTimeFormatter = new Intl.DateTimeFormat("ru-RU", {
   month: "short",
   day: "numeric",
   hour: "numeric",

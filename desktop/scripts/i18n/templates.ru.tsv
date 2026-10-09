@@ -1,0 +1,242 @@
+, voice input: {}	, голосовой ввод: {}
+:{}:	:{}:
+· {}	· {}
+{} · {}	{} · {}
+{} ({})	{} ({})
+{} (current)	{} (текущая)
+{} (unavailable)	{} (недоступно)
+{} {}	{} {}
+{} {}{}	{} {}{}
+{} + all memories	{} + вся память
+{} + core memory	{} + основная память
+{} agent profile	Профиль агента {}
+{} animated character	Анимированный персонаж {}
+{} avatar	Аватар {}
+{} channel member{}	{} участник{} канала
+{} copy	{} (копия)
+{} couldn’t be added to #{}. {}	Не удалось добавить {} в #{}. {}
+{} description	Описание {}
+{} failed to start{}	Не удалось запустить {}{}
+{} failed: {}	{}: ошибка: {}
+{} imported, but {}.	{} импортировано, но {}.
+{} is already in {}.	{} уже в {}.
+{} is ready	{} готов
+{} member avatars	Аватары участников {}
+{} more addressed {}	Ещё {}, адресовано {}
+{} more members	Ещё {} участников
+{} only	Только {}
+{} pen	Перо: {}
+{} picker	Выбор: {}
+{} preview	Предпросмотр: {}
+{} prompt context	Контекст промпта: {}
+{} reported no models. Check that the CLI is installed and signed in, then reopen this screen.	{} не вернул ни одной модели. Проверьте, что CLI установлен и выполнен вход, затем откройте этот экран снова.
+{} requires sign-in before models can load. Sign in with the {} CLI in a terminal, then try again.	{} требует входа, чтобы загрузить модели. Войдите через {} CLI в терминале и повторите попытку.
+{} saved while stopped.	{}: сохранено, пока агент остановлен.
+{} settings sections	Разделы настроек: {}
+{} started.	{} запущен.
+{} team actions	Действия команды {}
+{} trading card	Коллекционная карточка {}
+{} was created, but it did not start: {}	{} создан, но не запустился: {}
+{} was created, but profile sync failed: {}	{} создан, но синхронизация профиля не удалась: {}
+{} was saved locally, but relay sync failed: {}. Remote users may still see the previous name or access policy until Buzz retries the sync.	{} сохранён локально, но синхронизация с сервером (relay) не удалась: {}. Другие пользователи могут видеть прежнее имя или политику доступа, пока Buzz не повторит синхронизацию.
+{} was updated, but profile sync failed: {}	{} обновлён, но синхронизация профиля не удалась: {}
+{}: {}	{}: {}
+{}:{} {}	{}:{} {}
+{}. {}	{}. {}
+{}. View activity.	{}. Посмотреть активность.
+{}'s card	Карточка агента {}
+{}'s card is ready	Карточка агента {} готова
+{}’s card is ready — view it	Карточка агента {} готова — посмотреть
+{}{}	{}{}
+/ {}	/ {}
+#{}	#{}
+About {}	О канале {}
+ACP wire source: {}	Источник ACP: {}
+Actions for {}	Действия для {}
+Add {}	Добавить {}
+Add channel to {}	Добавить канал в {}
+Added {} to {}.	{} добавлен в {}.
+Added {} to #{}	{} добавлен в #{}
+Adding {}	Добавление {}
+Adding {} to #{}…	Добавление {} в #{}…
+arg {}	аргумент {}
+Back to #{}	Назад в #{}
+Buzz will open a sign-in window for {}.	Buzz откроет окно входа для {}.
+Check {} again	Проверить {} снова
+Copied {}	Скопировано: {}
+Copy {}	Копировать {}
+Copy channel name: {}	Копировать название канала: {}
+Could not reconnect to the relay. {}	Не удалось переподключиться к серверу (relay). {}
+Could not start {} — your message was sent, but the agent may not respond. {}	Не удалось запустить {} — сообщение отправлено, но агент может не ответить. {}
+Couldn't check which agents use this harness — some agents may stop launching. Delete {}?	Не удалось проверить, какие агенты используют эту среду запуска, — некоторые из них могут перестать запускаться. Удалить {}?
+Couldn't copy {}.	Не удалось скопировать {}.
+Create {}'s card	Создать карточку агента {}
+Created "{}"	Создан «{}»
+Created and started {}.	{} создан и запущен.
+Current ({})	Текущий ({})
+Delete {}	Удалить {}
+Deleted "{}"	Удалён «{}»
+Deleted {}.	{} удалён.
+Don't automatically mention {} in this thread	Не упоминать {} автоматически в этом треде
+Download {}	Скачать {}
+Duplicate {}	Дублировать {}
+Duplicated as "{}"	Создана копия «{}»
+Edit {}	Изменить {}
+Exported {}.	{} экспортирован.
+Failed to delete message: {}	Не удалось удалить сообщение: {}
+Failed to remove previews: {}	Не удалось удалить превью: {}
+Filter inbox: {}{}	Фильтр входящих: {}{}
+Huddle active — {} participant{}	Идёт созвон — {} участник{}
+Image {} of {}	Изображение {} из {}
+Imported {} with {} member{}.	Импортировано: {}, {} участник{}.
+In DM with {}	В личных сообщениях с {}
+Install {}	Установить {}
+Installing {}	Установка {}
+Join active huddle ({} participant{})	Подключиться к созвону ({} участник{})
+Jump to {}	Перейти к {}
+Last live {}	Последний раз в сети {}
+Leave "{}"? You'll stop receiving its messages and can rejoin later.	Покинуть «{}»? Вы перестанете получать сообщения отсюда и сможете вернуться позже.
+Link previews set to {}.	Превью ссылок: {}.
+Mention {}	Упомянуть {}
+Minting {}'s card failed	Не удалось создать карточку агента {}
+Minting {}’s card failed	Не удалось создать карточку агента {}
+Minting {}’s card… (takes a few minutes)	Создание карточки агента {}… (займёт несколько минут)
+More actions for {}	Другие действия для {}
+New {}	Новый {}
+new-dm-recipient-name-{}	new-dm-recipient-name-{}
+Open {}	Открыть {}
+Open {} {}: {}	Открыть {} {}: {}
+Open {} profile	Открыть профиль {}
+Open {} setup	Открыть настройку {}
+Open #{}	Открыть #{}
+Open actions for {}	Открыть действия для {}
+Open activity feed. Last live {}.	Открыть ленту активности. Последний раз в сети {}.
+Open channel {}	Открыть канал {}
+Open full activity. Last live {}.	Открыть всю активность. Последний раз в сети {}.
+Open inbox item from {}	Открыть элемент входящих от {}
+Open issue {} in repository {}	Открыть задачу {} в репозитории {}
+Open profile for {}	Открыть профиль {}
+Open profile menu for {}	Открыть меню профиля {}
+Open project {}	Открыть проект {}
+Open pull request {} in repository {}	Открыть pull request {} в репозитории {}
+Open thread from {}	Открыть тред от {}
+Open thread in {}	Открыть тред в {}
+Password (min {} characters)	Пароль (не менее {} символов)
+Playback speed {}; next {}	Скорость воспроизведения {}; следующая {}
+Playback speed: {}	Скорость воспроизведения: {}
+Pocket TTS voice: {}	Голос Pocket TTS: {}
+Preview {}	Прослушать {}
+Preview from {}	Превью из {}
+Project "{}" created.	Проект «{}» создан.
+Ran {} tool calls	Вызовов инструментов: {}
+React {} at {}	Реакция {} на {}
+React with {}	Реакция {}
+Remove "{}" from this device? Buzz won't contact the relay, so your membership isn't revoked. You can add the community again later.	Удалить «{}» с этого устройства? Buzz не будет обращаться к серверу (relay), поэтому ваше участие не отзывается. Сообщество можно добавить снова позже.
+Remove {}	Убрать {}
+Remove {} from huddle	Убрать {} из созвона
+Remove {} search scope	Убрать область поиска {}
+Removed {} from My Agents.	{} удалён из «Моих агентов».
+Restarted {}.	{} перезапущен.
+Role changed to {}	Роль изменена на {}
+Saved {}'s card. Share it — the card IS the agent.	Карточка агента {} сохранена. Поделитесь ею — карточка и есть агент.
+Seek to {}	Перейти к {}
+Select {}	Выбрать {}
+Sent {}'s card.	Карточка агента {} отправлена.
+Sent a copy of {}	Копия {} отправлена
+Show #{} activity	Показать активность #{}
+Show all huddle participants ({})	Показать всех участников созвона ({})
+Sign in to {}	Войти в {}
+Sort {}s: {}	Сортировка ({}): {}
+Started {}.	{} запущен.
+Step {} of {}	Шаг {} из {}
+Stop {} speaking	Остановить речь {}
+Stop signal sent to {}. It may take a moment to respond.	Сигнал остановки отправлен {}. Ответ может занять некоторое время.
+Template: {}	Шаблон: {}
+Theme style, {}	Стиль темы, {}
+Toggle {} reaction	Переключить реакцию {}
+Updated "{}"	Обновлён «{}»
+Updated {}.	{} обновлён.
+Upload failed: {}	Ошибка загрузки: {}
+Uploading {}	Загрузка {}
+Use {} accent	Акцентный цвет {}
+Using built-in model options. Could not load live models for {}.	Используются встроенные варианты моделей. Не удалось загрузить актуальные модели для {}.
+v{} available — download from GitHub. Switch to AppImage for automatic updates.	Доступна версия v{} — скачайте её с GitHub. Перейдите на AppImage для автоматических обновлений.
+Value for {}	Значение для {}
+Verification code digit {} of {}	Цифра {} из {} кода подтверждения
+Verify {} public key	Проверить открытый ключ {}
+View {} install instructions	Инструкция по установке {}
+View channel members ({})	Участники канала ({})
+View draft in {}	Открыть черновик в {}
+Visibility: {}	Видимость: {}
+Voice settings for {}	Настройки голоса для {}
+What this {} is for	Для чего нужен этот {}
+Zoom image: {}	Увеличить изображение: {}
+{{{}}}	{{{}}}
+{} {} served this session	Обслужено за сеанс: {} {}
+{} all {}	{} все {}
+{} is a preview feature. Enable it in Settings → Experiments to surface it in your sidebar.	{} — функция в режиме предварительного просмотра. Включите её в «Настройки → Эксперименты», чтобы она появилась на боковой панели.
+{} is your Bestie	{} — ваш Bestie
+{} options	Вариантов: {}
+{} slider	Ползунок: {}
+{} tok/s	{} ток/с
+{}: {}. Read only.	{}: {}. Только чтение.
+{}: done	{}: готово
+Added :{}:	Добавлено :{}:
+Agent {}	Агент {}
+Archive failed: {}	Не удалось архивировать: {}
+Assigned to {}	Назначено: {}
+Cancel rejected: {}	Отмена отклонена: {}
+Change role for {}	Изменить роль для {}
+Channel "#{}" created.	Канал «#{}» создан.
+Channel subscriptions ({})	Подписки на каналы ({})
+Chat with an agent about {}	Обсудить {} с агентом
+Choose {}	Выбрать: {}
+Choose an existing repository to add to {}.	Выберите существующий репозиторий для добавления в {}.
+Cloned to {}	Клонировано в {}
+Cloning {}…	Клонирование {}…
+Close {}	Закрыть {}
+Coding agent: {}	Агент для кода: {}
+Comment on {} {} line {}	Комментарий к {} {}, строка {}
+Committed by {}{}	Автор коммита: {}{}
+Community emoji ({})	Эмодзи сообщества ({})
+Create a task in {}	Создать задачу в {}
+Created by {}	Создатель: {}
+Feedback marked {}	Отзыв отмечен как {}
+Message {}	Написать {}
+More options for {}	Другие действия: {}
+My emoji ({})	Мои эмодзи ({})
+Open {} {}	Открыть {} {}
+Open {} {} line {} in Files changed	Открыть {} {}, строка {}, в «Изменённых файлах»
+Open {} in {}	Открыть {} в {}
+Open author-claimed origin channel #{}	Открыть исходный канал #{} (по словам автора)
+Open repository access channel #{}	Открыть канал доступа к репозиторию #{}
+Open repository on {}	Открыть репозиторий на {}
+Project list: {}	Список проектов: {}
+Remove :{}:	Удалить :{}:
+Remove archive subscription for {}	Удалить подписку на архив для {}
+Removed :{}:	Удалено :{}:
+Report resolved: {}	Жалоба рассмотрена: {}
+Repository "{}" added.	Репозиторий «{}» добавлен.
+Repository "{}" created.	Репозиторий «{}» создан.
+Repository {}	Репозиторий {}
+Repository access set to #{}.	Доступ к репозиторию: #{}.
+Saves kind {} observer frames addressed to your pubkey. These are ephemeral — not stored by the relay — so local archiving is the only way to retain them.	Сохраняет кадры наблюдателя (kind {}), адресованные вашему pubkey. Они временные — сервер их не хранит, поэтому локальный архив — единственный способ их сохранить.
+Search {}	Поиск: {}
+Search {}s	Поиск: {}
+Serving your agent · {} live	Обслуживает вашего агента · активно: {}
+Show next {} entries, {} of {} total	Показать следующие записи ({}), {} из {}
+Step {}	Шаг {}
+Step {}: {}	Шаг {}: {}
+Team: {}	Команда: {}
+Terminal {}{}	Терминал {}{}
+Trigger: {}	Триггер: {}
+Unarchive failed: {}	Не удалось вернуть из архива: {}
+Unassign {}	Снять назначение: {}
+View {}'s profile	Открыть профиль: {}
+View commit {}	Открыть коммит {}
+DM with {}	Личный чат с {}
+In DM with {}	В личном чате с {}
+DM from {}	Личное сообщение от {}
+Thread in #{}	Тред в #{}
+Message #{}	Сообщение в #{}
+Message {} people	Написать {} людям

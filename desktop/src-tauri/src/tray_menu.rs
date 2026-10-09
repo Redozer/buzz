@@ -307,11 +307,11 @@ fn build_menu<R: Runtime>(
     let mut activity_items =
         Vec::with_capacity(activities.len().saturating_add(recent_activities.len()));
 
-    let running = MenuItem::new(app, "Running", false, None::<&str>)?;
+    let running = MenuItem::new(app, "Работают", false, None::<&str>)?;
     menu.append(&running)?;
 
     if activities.is_empty() {
-        let empty = MenuItem::new(app, "No agents are running", false, None::<&str>)?;
+        let empty = MenuItem::new(app, "Нет работающих агентов", false, None::<&str>)?;
         menu.append(&empty)?;
     } else {
         append_activity_items(app, &menu, activities, &mut activity_items)?;
@@ -319,7 +319,7 @@ fn build_menu<R: Runtime>(
 
     if !recent_activities.is_empty() {
         append_separator(app, &menu)?;
-        let recent = MenuItem::new(app, "Recent", false, None::<&str>)?;
+        let recent = MenuItem::new(app, "Недавние", false, None::<&str>)?;
         menu.append(&recent)?;
         append_activity_items(app, &menu, recent_activities, &mut activity_items)?;
     }
@@ -328,7 +328,7 @@ fn build_menu<R: Runtime>(
     menu.append(&MenuItem::with_id(
         app,
         NEW_CHANNEL_ID,
-        "New Channel",
+        "Новый канал",
         true,
         None::<&str>,
     )?)?;
@@ -336,7 +336,7 @@ fn build_menu<R: Runtime>(
     menu.append(&MenuItem::with_id(
         app,
         OPEN_BUZZ_ID,
-        "Open Buzz",
+        "Открыть Buzz",
         true,
         None::<&str>,
     )?)?;
@@ -344,7 +344,7 @@ fn build_menu<R: Runtime>(
     menu.append(&MenuItem::with_id(
         app,
         QUIT_ID,
-        "Quit Buzz",
+        "Завершить Buzz",
         true,
         None::<&str>,
     )?)?;

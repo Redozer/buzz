@@ -236,7 +236,7 @@ export function shortenMiddle(value: string, maxLength: number) {
   return `${value.slice(0, edgeLength)}...${value.slice(-edgeLength)}`;
 }
 
-const transcriptTimeFormat = new Intl.DateTimeFormat("en-US", {
+const transcriptTimeFormat = new Intl.DateTimeFormat("ru-RU", {
   hour: "numeric",
   hour12: true,
   minute: "2-digit",

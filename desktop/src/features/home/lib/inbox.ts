@@ -108,7 +108,7 @@ export type InboxGroup = {
 
 type InboxChannel = Pick<Channel, "channelType" | "id" | "name">;
 
-const fullTimeFormatter = new Intl.DateTimeFormat("en-US", {
+const fullTimeFormatter = new Intl.DateTimeFormat("ru-RU", {
   month: "short",
   day: "numeric",
   year: "numeric",

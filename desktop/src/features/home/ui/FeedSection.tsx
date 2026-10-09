@@ -23,7 +23,7 @@ import { Markdown } from "@/shared/ui/markdown";
 import { hasLinkPreviewSuppression } from "@/features/messages/lib/formatTimelineMessages";
 import { UserAvatar } from "@/shared/ui/UserAvatar";
 
-const relativeTimeFormatter = new Intl.RelativeTimeFormat("en-US", {
+const relativeTimeFormatter = new Intl.RelativeTimeFormat("ru-RU", {
   numeric: "auto",
 });
 
@@ -50,7 +50,7 @@ function formatRelativeTime(unixSeconds: number) {
     );
   }
 
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("ru-RU", {
     month: "short",
     day: "numeric",
     hour: "numeric",

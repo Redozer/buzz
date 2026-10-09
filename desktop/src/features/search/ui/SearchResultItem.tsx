@@ -204,7 +204,7 @@ function formatRelativeTime(unixSeconds: number) {
     return `${Math.floor(diff / (60 * 60))}h ago`;
   }
 
-  return new Intl.DateTimeFormat("en-US", {
+  return new Intl.DateTimeFormat("ru-RU", {
     month: "short",
     day: "numeric",
     hour: "numeric",

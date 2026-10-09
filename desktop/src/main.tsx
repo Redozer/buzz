@@ -1,3 +1,4 @@
+import "@/i18n/early";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "@/app/App";
@@ -23,6 +24,7 @@ import { recoverLocalStorageQuotaOnStartup } from "@/shared/lib/localStorageQuot
 import { startLocalStorageSweep } from "@/shared/lib/localStorageSweep";
 import { initializeConversationDensityPreference } from "@/shared/lib/conversationDensityPreference";
 import { initializeFontSizePreference } from "@/shared/lib/fontSizePreference";
+import { startRussianUi } from "@/i18n/domTranslate";
 
 type E2eWindow = Window & {
   __BUZZ_E2E__?: unknown;
@@ -80,6 +82,7 @@ function configureDevE2eBridgeFromUrl() {
 }
 
 function renderApp() {
+  startRussianUi();
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
       {/* block/buzz#5078 — catch any uncaught render error so a WebKit

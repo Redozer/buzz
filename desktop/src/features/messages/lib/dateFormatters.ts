@@ -17,14 +17,14 @@
  * scrolls away while the messages under it stay on screen.
  */
 
-const TIME_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const TIME_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   hour: "numeric",
   minute: "2-digit",
 });
 
 const DAY_PERIOD_SUFFIX_RE = /[\s\u00a0\u202f]*(?:AM|PM)$/i;
 
-const FULL_DATE_TIME_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const FULL_DATE_TIME_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   weekday: "long",
   year: "numeric",
   month: "long",
@@ -33,7 +33,7 @@ const FULL_DATE_TIME_FORMATTER = new Intl.DateTimeFormat("en-US", {
   minute: "2-digit",
 });
 
-const SHORT_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat("en-US", {
+const SHORT_MONTH_DAY_FORMATTER = new Intl.DateTimeFormat("ru-RU", {
   month: "short",
   day: "numeric",
 });

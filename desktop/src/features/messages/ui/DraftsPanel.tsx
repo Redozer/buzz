@@ -65,7 +65,7 @@ const UNKNOWN_DRAFT_SOURCE: DraftSource = {
   label: UNKNOWN_CHANNEL_LABEL,
 };
 
-const draftTimeFormatter = new Intl.DateTimeFormat("en-US", {
+const draftTimeFormatter = new Intl.DateTimeFormat("ru-RU", {
   month: "short",
   day: "numeric",
   hour: "numeric",
